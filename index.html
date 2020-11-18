@@ -78,6 +78,53 @@
     <article class="post" id="post-excerpt">
       <header>
         <div class="post-title">
+          <h1><a class="post-title-link" href="/2020/11/18/java-study/">Java 基础</a></h1>
+        </div>
+        <div class="post-meta">
+          <span class="post-time"><i class="iconfont icon-calendar"></i>2020-11-18</span>
+          
+              
+                <i class="iconfont icon-divide"></i>
+                <i class="iconfont icon-folder" style="color: #8a8a8a;"></i>
+                <a class="post-category" href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a>
+              
+          
+          <!---------------------------------------->
+            
+        <!----------------------------------------->
+        </div>
+      </header>
+      <div class="post-content">
+        <!-------------->
+        
+          <h1 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h1><pre><code>Java 虚拟机就是一个字节码翻译器，它将字节码文件翻译成各个系统对应的机器码，确保字节码文件能在各个系统正确运行。</code></pre>
+<h2 id="编译器"><a href="#编译器" class="headerlink" title="编译器"></a>编译器</h2><pre><code>前端编译器：Sun——javac、Eclipse JDT(ECJ)
+    将java源文件编译成字节码
+JIT编译器：字节码到机器码
+    当源代码转化为字节码之后，其实要运行程序，有两种选择。一种是使用 Java 解释器解释执行字节码，另一种则是使用 JIT 编译器将字节码转化为本地机器代码。</code></pre>
+<h2 id="内存结构"><a href="#内存结构" class="headerlink" title="内存结构"></a>内存结构</h2><p><img src="/img/jvm.png">   </p>
+<pre><code>共有：java堆、方法区、常量池
+    Eden：from ：to = 8:1:1
+私有：程序计数器——指向虚拟机字节码指令的位置；唯一一个无OOM的区域
+     java虚拟机栈——生命周期同县城；一个线程中每调用一个方法创建一个栈帧；栈帧结构【本地变量表】、本地方去栈</code></pre>
+<h2 id="JVM-类加载"><a href="#JVM-类加载" class="headerlink" title="JVM 类加载"></a>JVM 类加载</h2><pre><code>JVM 虚拟机执行 class 字节码的过程可以分为七个阶段：
+加载-将字节码转化为二进制字节流加载到内存中、验证、准备、解析、初始化、使用、卸载。</code></pre>
+<h2 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h2><pre><code>引用计数、根可达
+标记清除算法、复制算法、标记压缩</code></pre>
+<h2 id="垃圾回收器"><a href="#垃圾回收器" class="headerlink" title="垃圾回收器"></a>垃圾回收器</h2><pre><code>串行回收器、并行回收器、CMS回收器、G1回收器
+    </code></pre>
+
+        
+        <!-------------->
+      </div>
+      <div class="post-tags">
+      
+    </div>
+    </article>
+  
+    <article class="post" id="post-excerpt">
+      <header>
+        <div class="post-title">
           <h1><a class="post-title-link" href="/2020/10/21/%08design-pattern/">Design patterns</a></h1>
         </div>
         <div class="post-meta">

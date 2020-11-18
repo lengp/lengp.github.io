@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#34495e">
-  <title>LengPeng</title>
+  <title>Java 基础 | LengPeng</title>
   <link rel="alternate" href="path/of/rss" type="application/atom+xml">
   <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
   
@@ -64,8 +64,11 @@
     <!-- <img src="/" alt="banner"> -->
     <div class="banner-title">
       
-        <div class="intro">
-          practice makes perfect
+        <div class="post-title">
+          Java 基础
+            <div class="post-tags">
+    		    
+    	      </div>
         </div>
       
     </div>
@@ -73,48 +76,68 @@
 </div>
 
       <main class="main"id="main">
+          <article class="post">
+  
+
+  <header>
+    <div class="post-title mobile-post-title">
+      <h1>Java 基础</h1>
+        <div class="post-tags">
+        
+        </div>
+    </div>
+    <div class="post-meta">
+      <span class="post-time"><i class="iconfont icon-calendar"></i>2020-11-18</span>
+      
           
-<div class="tags-container category-container">
-  <h4 class="category-item-name"><i class="iconfont icon-folder"></i>技术分享</h4>
-  
-    <div class="category-item">
+            <i class="iconfont icon-divide"></i>
+            <i class="iconfont icon-folder" style="color: #8a8a8a;"></i>
+            <a class="post-category" href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a>
+          
       
-        <a href="/2020/11/18/java-study/">
-          <time datetime="2020-11-18T02:27:40.434Z">
-            2020-11-18
-          </time>
-          <span class="category-title">Java 基础</span>
-        </a>
-      
+      <!----------------------------------->
+        
+      <!----------------------------------->
     </div>
+  </header>
   
-    <div class="category-item">
-      
-        <a href="/2020/10/21/%08design-pattern/">
-          <time datetime="2020-10-21T05:57:42.204Z">
-            2020-10-21
-          </time>
-          <span class="category-title">Design patterns</span>
-        </a>
-      
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JVM"><span class="toc-text">JVM</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8"><span class="toc-text">编译器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84"><span class="toc-text">内存结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM-%E7%B1%BB%E5%8A%A0%E8%BD%BD"><span class="toc-text">JVM 类加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6"><span class="toc-text">垃圾回收</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E5%99%A8"><span class="toc-text">垃圾回收器</span></a></li></ol></li></ol>
     </div>
-  
-    <div class="category-item">
-      
-        <a href="/2020/10/16/hello-world/">
-          <time datetime="2020-10-16T07:10:36.453Z">
-            2020-10-16
-          </time>
-          <span class="category-title">Quick Start</span>
-        </a>
-      
-    </div>
-  
-</div>
+  </div>
+
+
+  <div class="post-content">
+    <h1 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h1><pre><code>Java 虚拟机就是一个字节码翻译器，它将字节码文件翻译成各个系统对应的机器码，确保字节码文件能在各个系统正确运行。</code></pre>
+<h2 id="编译器"><a href="#编译器" class="headerlink" title="编译器"></a>编译器</h2><pre><code>前端编译器：Sun——javac、Eclipse JDT(ECJ)
+    将java源文件编译成字节码
+JIT编译器：字节码到机器码
+    当源代码转化为字节码之后，其实要运行程序，有两种选择。一种是使用 Java 解释器解释执行字节码，另一种则是使用 JIT 编译器将字节码转化为本地机器代码。</code></pre>
+<h2 id="内存结构"><a href="#内存结构" class="headerlink" title="内存结构"></a>内存结构</h2><p><img src="/img/jvm.png">   </p>
+<pre><code>共有：java堆、方法区、常量池
+    Eden：from ：to = 8:1:1
+私有：程序计数器——指向虚拟机字节码指令的位置；唯一一个无OOM的区域
+     java虚拟机栈——生命周期同县城；一个线程中每调用一个方法创建一个栈帧；栈帧结构【本地变量表】、本地方去栈</code></pre>
+<h2 id="JVM-类加载"><a href="#JVM-类加载" class="headerlink" title="JVM 类加载"></a>JVM 类加载</h2><pre><code>JVM 虚拟机执行 class 字节码的过程可以分为七个阶段：
+加载-将字节码转化为二进制字节流加载到内存中、验证、准备、解析、初始化、使用、卸载。</code></pre>
+<h2 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h2><pre><code>引用计数、根可达
+标记清除算法、复制算法、标记压缩</code></pre>
+<h2 id="垃圾回收器"><a href="#垃圾回收器" class="headerlink" title="垃圾回收器"></a>垃圾回收器</h2><pre><code>串行回收器、并行回收器、CMS回收器、G1回收器
+    </code></pre>
+
+  </div>
+  <div class="post-footer">the end</div>
+</article>
 
           
-     <nav class="pagination">
+  <nav class="pagination post-nav">
     
+    
+      <a href="/2020/10/21/%08design-pattern/">
+        <span class="next-post">Design patterns<i class="iconfont icon-more"></i></span>
+      </a>
     
   </nav>
 
