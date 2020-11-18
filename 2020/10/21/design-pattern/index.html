@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#34495e">
-  <title>LengPeng</title>
+  <title>Design patterns | LengPeng</title>
   <link rel="alternate" href="path/of/rss" type="application/atom+xml">
   <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
   
@@ -64,8 +64,11 @@
     <!-- <img src="/" alt="banner"> -->
     <div class="banner-title">
       
-        <div class="intro">
-          practice makes perfect
+        <div class="post-title">
+          Design patterns
+            <div class="post-tags">
+    		    
+    	      </div>
         </div>
       
     </div>
@@ -73,31 +76,41 @@
 </div>
 
       <main class="main"id="main">
-          <section class="posts">
+          <article class="post">
   
-    <article class="post" id="post-excerpt">
-      <header>
-        <div class="post-title">
-          <h1><a class="post-title-link" href="/2020/10/21/%08design-pattern/">Design patterns</a></h1>
-        </div>
-        <div class="post-meta">
-          <span class="post-time"><i class="iconfont icon-calendar"></i>2020-10-21</span>
-          
-              
-                <i class="iconfont icon-divide"></i>
-                <i class="iconfont icon-folder" style="color: #8a8a8a;"></i>
-                <a class="post-category" href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a>
-              
-          
-          <!---------------------------------------->
-            
-        <!----------------------------------------->
-        </div>
-      </header>
-      <div class="post-content">
-        <!-------------->
+
+  <header>
+    <div class="post-title mobile-post-title">
+      <h1>Design patterns</h1>
+        <div class="post-tags">
         
-          <h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">使程序设计更加标准化、代码编制更加工程化，使软件开发效率大大提高，从而缩短软件的开发周期。使设计的代码可重用性高、可读性强、可靠性高、灵活性好、可维护性强。</span><br><span class="line">对于简单的程序开发，可能写一个简单的算法要比引入某种设计模式更加容易。但对大项目的开发或者框架设计，用设计模式来组织代码显然更好。</span><br></pre></td></tr></table></figure>
+        </div>
+    </div>
+    <div class="post-meta">
+      <span class="post-time"><i class="iconfont icon-calendar"></i>2020-10-21</span>
+      
+          
+            <i class="iconfont icon-divide"></i>
+            <i class="iconfont icon-folder" style="color: #8a8a8a;"></i>
+            <a class="post-category" href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a>
+          
+      
+      <!----------------------------------->
+        
+      <!----------------------------------->
+    </div>
+  </header>
+  
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-text">设计模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="toc-text">设计原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-text">分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%9E%8B%EF%BC%9A%E7%94%A8%E6%9D%A5%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%A8%A1%E5%BC%8F"><span class="toc-text">创建型：用来创建对象的模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F"><span class="toc-text">1.单例模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95"><span class="toc-text">2.工厂方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82"><span class="toc-text">3.抽象工厂</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%BB%BA%E9%80%A0%E8%80%85"><span class="toc-text">4.建造者</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F"><span class="toc-text">5.原型模式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E5%9E%8B%EF%BC%9A%E8%AE%A8%E8%AE%BA%E7%9A%84%E6%98%AF%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%BB%93%E6%9E%84%EF%BC%9B"><span class="toc-text">结构型：讨论的是类和对象的结构；</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F"><span class="toc-text">6.代理模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F"><span class="toc-text">7.装饰模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-%E9%80%82%E9%85%8D%E5%99%A8"><span class="toc-text">8.适配器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-%E7%BB%84%E5%90%88"><span class="toc-text">9.组合</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-%E6%A1%A5%E6%8E%A5"><span class="toc-text">10.桥接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-%E5%A4%96%E8%A7%82"><span class="toc-text">11.外观</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F"><span class="toc-text">12.享元模式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%8C%E4%B8%BA%E5%9E%8B%EF%BC%9A%E5%AF%B9%E8%B1%A1%E7%9A%84%E8%A1%8C%E4%B8%BA"><span class="toc-text">行为型：对象的行为</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#13-%E6%A8%A1%E7%89%88%E6%96%B9%E6%B3%95"><span class="toc-text">13.模版方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-%E5%91%BD%E4%BB%A4"><span class="toc-text">14.命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#15-%E8%B4%A3%E4%BB%BB%E9%93%BE"><span class="toc-text">15.责任链</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#16-%E7%AD%96%E7%95%A5"><span class="toc-text">16.策略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#17-%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="toc-text">17.迭代器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#18-%E4%B8%AD%E4%BB%8B%E8%80%85"><span class="toc-text">18.中介者</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#19-%E8%A7%82%E5%AF%9F%E8%80%85"><span class="toc-text">19.观察者</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20-%E5%A4%87%E5%BF%98%E5%BD%95"><span class="toc-text">20.备忘录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21-%E8%AE%BF%E9%97%AE%E8%80%85"><span class="toc-text">21.访问者</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#22-%E7%8A%B6%E6%80%81"><span class="toc-text">22.状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#23-%E8%A7%A3%E9%87%8A%E5%99%A8"><span class="toc-text">23.解释器</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </div>
+
+
+  <div class="post-content">
+    <h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">使程序设计更加标准化、代码编制更加工程化，使软件开发效率大大提高，从而缩短软件的开发周期。使设计的代码可重用性高、可读性强、可靠性高、灵活性好、可维护性强。</span><br><span class="line">对于简单的程序开发，可能写一个简单的算法要比引入某种设计模式更加容易。但对大项目的开发或者框架设计，用设计模式来组织代码显然更好。</span><br></pre></td></tr></table></figure>
 <h3 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h3><pre><code>单一职责
 里氏替换
 依赖倒置
@@ -105,102 +118,24 @@
 迪米特
 开闭</code></pre>
 <h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><h3 id="创建型：用来创建对象的模式"><a href="#创建型：用来创建对象的模式" class="headerlink" title="创建型：用来创建对象的模式"></a>创建型：用来创建对象的模式</h3><h4 id="1-单例模式"><a href="#1-单例模式" class="headerlink" title="1.单例模式"></a>1.单例模式</h4><h4 id="2-工厂方法"><a href="#2-工厂方法" class="headerlink" title="2.工厂方法"></a>2.工厂方法</h4><h4 id="3-抽象工厂"><a href="#3-抽象工厂" class="headerlink" title="3.抽象工厂"></a>3.抽象工厂</h4><h4 id="4-建造者"><a href="#4-建造者" class="headerlink" title="4.建造者"></a>4.建造者</h4><h4 id="5-原型模式"><a href="#5-原型模式" class="headerlink" title="5.原型模式"></a>5.原型模式</h4><h3 id="结构型：讨论的是类和对象的结构；"><a href="#结构型：讨论的是类和对象的结构；" class="headerlink" title="结构型：讨论的是类和对象的结构；"></a>结构型：讨论的是类和对象的结构；</h3><h4 id="6-代理模式"><a href="#6-代理模式" class="headerlink" title="6.代理模式"></a>6.代理模式</h4><h4 id="7-装饰模式"><a href="#7-装饰模式" class="headerlink" title="7.装饰模式"></a>7.装饰模式</h4><h4 id="8-适配器"><a href="#8-适配器" class="headerlink" title="8.适配器"></a>8.适配器</h4><h4 id="9-组合"><a href="#9-组合" class="headerlink" title="9.组合"></a>9.组合</h4><h4 id="10-桥接"><a href="#10-桥接" class="headerlink" title="10.桥接"></a>10.桥接</h4><h4 id="11-外观"><a href="#11-外观" class="headerlink" title="11.外观"></a>11.外观</h4><h4 id="12-享元模式"><a href="#12-享元模式" class="headerlink" title="12.享元模式"></a>12.享元模式</h4><h3 id="行为型：对象的行为"><a href="#行为型：对象的行为" class="headerlink" title="行为型：对象的行为"></a>行为型：对象的行为</h3><h4 id="13-模版方法"><a href="#13-模版方法" class="headerlink" title="13.模版方法"></a>13.模版方法</h4><h4 id="14-命令"><a href="#14-命令" class="headerlink" title="14.命令"></a>14.命令</h4><h4 id="15-责任链"><a href="#15-责任链" class="headerlink" title="15.责任链"></a>15.责任链</h4><h4 id="16-策略"><a href="#16-策略" class="headerlink" title="16.策略"></a>16.策略</h4><h4 id="17-迭代器"><a href="#17-迭代器" class="headerlink" title="17.迭代器"></a>17.迭代器</h4><h4 id="18-中介者"><a href="#18-中介者" class="headerlink" title="18.中介者"></a>18.中介者</h4><h4 id="19-观察者"><a href="#19-观察者" class="headerlink" title="19.观察者"></a>19.观察者</h4><h4 id="20-备忘录"><a href="#20-备忘录" class="headerlink" title="20.备忘录"></a>20.备忘录</h4><h4 id="21-访问者"><a href="#21-访问者" class="headerlink" title="21.访问者"></a>21.访问者</h4><h4 id="22-状态"><a href="#22-状态" class="headerlink" title="22.状态"></a>22.状态</h4><h4 id="23-解释器"><a href="#23-解释器" class="headerlink" title="23.解释器"></a>23.解释器</h4>
-        
-        <!-------------->
-      </div>
-      <div class="post-tags">
-      
-    </div>
-    </article>
-  
-    <article class="post" id="post-excerpt">
-      <header>
-        <div class="post-title">
-          <h1><a class="post-title-link" href="/2020/10/19/new-start/">New Start</a></h1>
-        </div>
-        <div class="post-meta">
-          <span class="post-time"><i class="iconfont icon-calendar"></i>2020-10-19</span>
-          
-              
-                <i class="iconfont icon-divide"></i>
-                <i class="iconfont icon-folder" style="color: #8a8a8a;"></i>
-                <a class="post-category" href="/categories/%E6%9D%82%E8%B0%88/">杂谈</a>
-              
-          
-          <!---------------------------------------->
-            
-        <!----------------------------------------->
-        </div>
-      </header>
-      <div class="post-content">
-        <!-------------->
-        
-          <p>Welcome to My blog! </p>
-<p>My name is peng leng, a programmer. I graduated from Shandong University in 2012， and like to play basketball,</p>
-<h2 id="New-Start"><a href="#New-Start" class="headerlink" title="New Start"></a>New Start</h2><p> <img src="/img/001.png"></p>
-
-        
-        <!-------------->
-      </div>
-      <div class="post-tags">
-      
-    </div>
-    </article>
-  
-    <article class="post" id="post-excerpt">
-      <header>
-        <div class="post-title">
-          <h1><a class="post-title-link" href="/2020/10/16/hello-world/">Quick Start</a></h1>
-        </div>
-        <div class="post-meta">
-          <span class="post-time"><i class="iconfont icon-calendar"></i>2020-10-16</span>
-          
-              
-                <i class="iconfont icon-divide"></i>
-                <i class="iconfont icon-folder" style="color: #8a8a8a;"></i>
-                <a class="post-category" href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a>
-              
-          
-          <!---------------------------------------->
-            
-        <!----------------------------------------->
-        </div>
-      </header>
-      <div class="post-content">
-        <!-------------->
-        
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-        
-        <!-------------->
-      </div>
-      <div class="post-tags">
-      
-    </div>
-    </article>
-  
-</section>
+  </div>
+  <div class="post-footer">the end</div>
+</article>
 
           
-     <nav class="pagination">
+  <nav class="pagination post-nav">
     
+    
+      <a href="/2020/10/19/new-start/">
+        <span class="next-post">New Start<i class="iconfont icon-more"></i></span>
+      </a>
     
   </nav>
 
 
           
+  
+
 
       </main>
     </div>
