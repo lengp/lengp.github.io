@@ -78,6 +78,49 @@
     <article class="post" id="post-excerpt">
       <header>
         <div class="post-title">
+          <h1><a class="post-title-link" href="/2020/11/20/spring/">Spring</a></h1>
+        </div>
+        <div class="post-meta">
+          <span class="post-time"><i class="iconfont icon-calendar"></i>2020-11-20</span>
+          
+              
+                <i class="iconfont icon-divide"></i>
+                <i class="iconfont icon-folder" style="color: #8a8a8a;"></i>
+                <a class="post-category" href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a>
+              
+          
+          <!---------------------------------------->
+            
+        <!----------------------------------------->
+        </div>
+      </header>
+      <div class="post-content">
+        <!-------------->
+        
+          <h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><pre><code>将类的各个部分封装成其他属性；Field Constructor Method
+
+获取public
+    getFields():Field [] 
+    getField(String a):Field
+获取所有：要忽略访问修饰符的安全规则——setAccessible(true);暴力反射
+    getDeclaredFields():Field [] 
+    getDeclaredField(String a):Field
+
+Field 获取属性、设置值
+Constructor 创建对象
+Method 执行方法 invoke()</code></pre>
+<h1 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h1>
+        
+        <!-------------->
+      </div>
+      <div class="post-tags">
+      
+    </div>
+    </article>
+  
+    <article class="post" id="post-excerpt">
+      <header>
+        <div class="post-title">
           <h1><a class="post-title-link" href="/2020/11/18/java-study/">Java 基础</a></h1>
         </div>
         <div class="post-meta">
@@ -135,10 +178,9 @@ G1收集器：并行与并发、分代收集、空间整合（标记-整理）
     初始标记：标记GC Roots能够关联的对象，并且修改TAMS的值，需要暂停用户线程
     并发标记：从GC Roots进行可达分析，找出存活对象，与用户线程并发执行
     最终标记：修正并发标记阶段因用户程序的并发执行导致的变动数据，需要暂停用户线程
-    筛选回收：对各个Reion的回收价值和成本进行排序，根据用户所期望的GC停顿时间指定回收计划
-
-    
-    </code></pre>
+    筛选回收：对各个Reion的回收价值和成本进行排序，根据用户所期望的GC停顿时间指定回收计划</code></pre>
+<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><h2 id="强引用"><a href="#强引用" class="headerlink" title="强引用"></a>强引用</h2><pre><code>强引用所指向的对象在任何时候都不会被系统回收，强引用可能导致内存泄漏。</code></pre>
+<h2 id="软引用"><a href="#软引用" class="headerlink" title="软引用"></a>软引用</h2><h2 id="弱引用"><a href="#弱引用" class="headerlink" title="弱引用"></a>弱引用</h2><h2 id="需引用"><a href="#需引用" class="headerlink" title="需引用"></a>需引用</h2><pre><code>    </code></pre>
 <h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><h3 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h3><pre><code>无序，不可重复
 底层用Hash表实现
 存取数据块

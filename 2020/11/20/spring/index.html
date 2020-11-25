@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#34495e">
-  <title>categories | LengPeng</title>
+  <title>Spring | LengPeng</title>
   <link rel="alternate" href="path/of/rss" type="application/atom+xml">
   <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
   
@@ -64,8 +64,11 @@
     <!-- <img src="/" alt="banner"> -->
     <div class="banner-title">
       
-        <div class="intro">
-          practice makes perfect
+        <div class="post-title">
+          Spring
+            <div class="post-tags">
+    		    
+    	      </div>
         </div>
       
     </div>
@@ -73,35 +76,64 @@
 </div>
 
       <main class="main"id="main">
-          
+          <article class="post">
+  
 
-
-
-  <div class="tags-container category-container">
-    <div class="category-meta">
-      共计 2 个分类
+  <header>
+    <div class="post-title mobile-post-title">
+      <h1>Spring</h1>
+        <div class="post-tags">
+        
+        </div>
     </div>
-    <ul>
-    
-      <li>
-        <a class="category-item" href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">
-          <i class="iconfont icon-folder"></i>技术分享<span>(4)</span>
-        </a>
-      </li>
-    
-      <li>
-        <a class="category-item" href="/categories/%E6%9D%82%E8%B0%88/">
-          <i class="iconfont icon-folder"></i>杂谈<span>(1)</span>
-        </a>
-      </li>
-    
-    </ul>
+    <div class="post-meta">
+      <span class="post-time"><i class="iconfont icon-calendar"></i>2020-11-20</span>
+      
+          
+            <i class="iconfont icon-divide"></i>
+            <i class="iconfont icon-folder" style="color: #8a8a8a;"></i>
+            <a class="post-category" href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a>
+          
+      
+      <!----------------------------------->
+        
+      <!----------------------------------->
+    </div>
+  </header>
+  
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84"><span class="toc-text">反射</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IOC"><span class="toc-text">IOC</span></a></li></ol>
+    </div>
   </div>
 
 
+  <div class="post-content">
+    <h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><pre><code>将类的各个部分封装成其他属性；Field Constructor Method
+
+获取public
+    getFields():Field [] 
+    getField(String a):Field
+获取所有：要忽略访问修饰符的安全规则——setAccessible(true);暴力反射
+    getDeclaredFields():Field [] 
+    getDeclaredField(String a):Field
+
+Field 获取属性、设置值
+Constructor 创建对象
+Method 执行方法 invoke()</code></pre>
+<h1 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h1>
+  </div>
+  <div class="post-footer">the end</div>
+</article>
+
           
-     <nav class="pagination">
+  <nav class="pagination post-nav">
     
+    
+      <a href="/2020/11/18/java-study/">
+        <span class="next-post">Java 基础<i class="iconfont icon-more"></i></span>
+      </a>
     
   </nav>
 
