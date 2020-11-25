@@ -97,19 +97,24 @@
       <div class="post-content">
         <!-------------->
         
-          <h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><pre><code>将类的各个部分封装成其他属性；Field Constructor Method
+          <h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><pre><code>将类的各个部分封装成其他属性；Field Constructor Method   
 
-获取public
-    getFields():Field [] 
-    getField(String a):Field
-获取所有：要忽略访问修饰符的安全规则——setAccessible(true);暴力反射
-    getDeclaredFields():Field [] 
-    getDeclaredField(String a):Field
+获取public   
+    getFields():Field []    
+    getField(String a):Field   
 
-Field 获取属性、设置值
-Constructor 创建对象
-Method 执行方法 invoke()</code></pre>
-<h1 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h1>
+获取所有：要忽略访问修饰符的安全规则——setAccessible(true);暴力反射   
+    getDeclaredFields():Field []    
+    getDeclaredField(String a):Field   
+
+Field 获取属性、设置值   
+Constructor 创建对象   
+Method 执行方法 invoke()   </code></pre>
+<h1 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h1><pre><code>由Spring IOC容器负责对象的生命周期及对象之间的关系
+
+BeanFactory
+ApplicationContext</code></pre>
+
         
         <!-------------->
       </div>
@@ -140,7 +145,8 @@ Method 执行方法 invoke()</code></pre>
       <div class="post-content">
         <!-------------->
         
-          <h1 id="1-JVM"><a href="#1-JVM" class="headerlink" title="1.JVM"></a>1.JVM</h1><pre><code>Java 虚拟机就是一个字节码翻译器，它将字节码文件翻译成各个系统对应的机器码，确保字节码文件能在各个系统正确运行。</code></pre>
+          <h1 id="8种基本类型"><a href="#8种基本类型" class="headerlink" title="8种基本类型"></a>8种基本类型</h1><pre><code>char,boolean,byte,int,long,float,double   </code></pre>
+<h1 id="1-JVM"><a href="#1-JVM" class="headerlink" title="1.JVM"></a>1.JVM</h1><pre><code>Java 虚拟机就是一个字节码翻译器，它将字节码文件翻译成各个系统对应的机器码，确保字节码文件能在各个系统正确运行。</code></pre>
 <h2 id="编译器"><a href="#编译器" class="headerlink" title="编译器"></a>编译器</h2><pre><code>前端编译器：Sun——javac、Eclipse JDT(ECJ)
     将java源文件编译成字节码
 JIT编译器：字节码到机器码
