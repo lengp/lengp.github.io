@@ -110,19 +110,25 @@
 
 
   <div class="post-content">
-    <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><pre><code>在并发编程领域，有两大核心问题：一个是互斥，即同一时刻只允许一个线程访问共享资源；另一个是同步，即线程之间如何通信、协作。
-
-缓存导致的可见行问题
-    一个线程对共享变量的修改，另一个线程能够立刻看到——可见性
-线程切换带来的原子性问题
-变异优化带来的有序性问题
-
-Java内存模型规范了jvm如何提供按需禁用缓存和编译优化的方法：volatile、synchronized、final 关键字及六项happens-before【前一个操作的结果对后续的操作是可见的】原则。
-
-volatile:原始意义为禁用cpu缓存
-
-final 修饰变量时，初衷是告诉编译器：这个变量生而不变，可以可劲儿优化</code></pre>
-<p>   <font color=#FF0000 > 不能用可变对象做锁 </font></p>
+    <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ul>
+<li><p>在并发编程领域，有两大核心问题：一个是互斥，即同一时刻只允许一个线程访问共享资源；另一个是同步，即线程之间如何通信、协作。   </p>
+</li>
+<li><p>缓存导致的可见行问题</p>
+<pre><code>  一个线程对共享变量的修改，另一个线程能够立刻看到——可见性   </code></pre>
+</li>
+<li><p>线程切换带来的原子性问题   </p>
+</li>
+<li><p>变异优化带来的有序性问题</p>
+</li>
+<li><p>Java内存模型规范了jvm如何提供按需禁用缓存和编译优化的方法：volatile、synchronized、final 关键字及六项happens-before【前一个操作的结果对后续的操作是可见的】原则。   </p>
+</li>
+<li><p>volatile:原始意义为禁用cpu缓存   </p>
+</li>
+<li><p>final 修饰变量时，初衷是告诉编译器：这个变量生而不变，可以可劲儿优化   </p>
+</li>
+<li><p><font color=#FF0000 > 不能用可变对象做锁 </font></p>
+</li>
+</ul>
 <h2 id="1-程序的顺序性规则："><a href="#1-程序的顺序性规则：" class="headerlink" title="1 程序的顺序性规则："></a>1 程序的顺序性规则：</h2><pre><code>    这条规则是指在一个线程中，按照程序顺序，前面的操作 Happens-Before 于后续的任意操作   </code></pre>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 以下代码来源于【参考1】</span><br><span class="line">class VolatileExample &#123;</span><br><span class="line">  int x &#x3D; 0;</span><br><span class="line">  volatile boolean v &#x3D; false;</span><br><span class="line">  public void writer() &#123;</span><br><span class="line">    x &#x3D; 42;</span><br><span class="line">    v &#x3D; true;</span><br><span class="line">  &#125;</span><br><span class="line">  public void reader() &#123;</span><br><span class="line">    if (v &#x3D;&#x3D; true) &#123;</span><br><span class="line">      &#x2F;&#x2F; 这里x会是多少呢？</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
