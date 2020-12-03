@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#34495e">
+  <title>多线程 | LengPeng</title>
+  <link rel="alternate" href="path/of/rss" type="application/atom+xml">
+  <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div class="mobile-header">
+    <span><i class="iconfont icon-turnon" id="mobile-nav-toggle"></i></span>
+    <div class="mobile-logo">
+      <a href="/.">LengPeng</a>
+    </div>
+  </div>
+  <div class="page" id="mobile-nav-panel">
+    <div class="container">
+      <header class="site-nav">
+      <div class="nav-content">
+        <div class="logo">
+          <a href="/">LengPeng</a>
+        </div>
+        <nav class="navbar">
+          <ul>
+            
+              <li class="menu-item">
+                <a href="/" class="menu-item-link"><i class="iconfont icon-home"></i>首页</a>
+              </li>
+            
+              <li class="menu-item">
+                <a href="/archives" class="menu-item-link"><i class="iconfont icon-archive"></i>归档</a>
+              </li>
+            
+              <li class="menu-item">
+                <a href="/categories" class="menu-item-link"><i class="iconfont icon-category"></i>分类</a>
+              </li>
+            
+              <li class="menu-item">
+                <a href="/about" class="menu-item-link"><i class="iconfont icon-about"></i>关于</a>
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+</header>
+
+      <div class="banner">
+  <div class="show">
+    <!-- <img src="/" alt="banner"> -->
+    <div class="banner-title">
+      
+        <div class="post-title">
+          多线程
+            <div class="post-tags">
+    		    
+    	      </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+      <main class="main"id="main">
+          <article class="post">
+  
+
+  <header>
+    <div class="post-title mobile-post-title">
+      <h1>多线程</h1>
+        <div class="post-tags">
+        
+        </div>
+    </div>
+    <div class="post-meta">
+      <span class="post-time"><i class="iconfont icon-calendar"></i>2020-11-26</span>
+      
+          
+            <i class="iconfont icon-divide"></i>
+            <i class="iconfont icon-folder" style="color: #8a8a8a;"></i>
+            <a class="post-category" href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a>
+          
+      
+      <!----------------------------------->
+        
+      <!----------------------------------->
+    </div>
+  </header>
+  
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-text">问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%A8%8B%E5%BA%8F%E7%9A%84%E9%A1%BA%E5%BA%8F%E6%80%A7%E8%A7%84%E5%88%99%EF%BC%9A"><span class="toc-text">1 程序的顺序性规则：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-volatile-%E5%8F%98%E9%87%8F%E8%A7%84%E5%88%99"><span class="toc-text">2 volatile 变量规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BC%A0%E9%80%92%E6%80%A7"><span class="toc-text">3 传递性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%AE%A1%E7%A8%8B%E4%B8%AD%E7%9A%84%E9%94%81%E8%A7%84%E5%88%99%E3%80%90synchronzied%E3%80%91"><span class="toc-text">4 管程中的锁规则【synchronzied】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E7%BA%BF%E7%A8%8Bstart%E8%A7%84%E5%88%99"><span class="toc-text">5 线程start规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E7%BA%BF%E7%A8%8Bjoin%E8%A7%84%E5%88%99"><span class="toc-text">6 线程join规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%BB%E9%94%81%E6%9D%A1%E4%BB%B6"><span class="toc-text">死锁条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E2%80%9C%E7%AD%89%E5%BE%85-%E9%80%9A%E7%9F%A5%E2%80%9D%E6%9C%BA%E5%88%B6%E4%BC%98%E5%8C%96%E5%BE%AA%E7%8E%AF%E7%AD%89%E5%BE%85"><span class="toc-text">用“等待-通知”机制优化循环等待</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">注意的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%80%A7%E9%97%AE%E9%A2%98"><span class="toc-text">安全性问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B4%BB%E8%B7%83%E6%80%A7%E9%97%AE%E9%A2%98"><span class="toc-text">活跃性问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98"><span class="toc-text">性能问题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%A1%E7%A8%8B%EF%BC%8C%E5%AF%B9%E5%BA%94%E7%9A%84%E8%8B%B1%E6%96%87%E6%98%AF-Monitor"><span class="toc-text">管程，对应的英文是 Monitor</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E6%95%B0%E9%87%8F"><span class="toc-text">线程数量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lock%EF%BC%8CCondition"><span class="toc-text">Lock，Condition</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Semaphore"><span class="toc-text">Semaphore</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%BB%E5%86%99%E9%94%81"><span class="toc-text">读写锁</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#StampedLock"><span class="toc-text">StampedLock</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Thread-Runnable"><span class="toc-text">Thread,Runnable</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1"><span class="toc-text">线程间的通信</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%A1%E5%8F%B7%E9%87%8F"><span class="toc-text">信号量</span></a></li></ol>
+    </div>
+  </div>
+
+
+  <div class="post-content">
+    <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><pre><code>在并发编程领域，有两大核心问题：一个是互斥，即同一时刻只允许一个线程访问共享资源；另一个是同步，即线程之间如何通信、协作。
+
+缓存导致的可见行问题
+    一个线程对共享变量的修改，另一个线程能够立刻看到——可见性
+线程切换带来的原子性问题
+变异优化带来的有序性问题
+
+Java内存模型规范了jvm如何提供按需禁用缓存和编译优化的方法：volatile、synchronized、final 关键字及六项happens-before【前一个操作的结果对后续的操作是可见的】原则。
+
+volatile:原始意义为禁用cpu缓存
+
+final 修饰变量时，初衷是告诉编译器：这个变量生而不变，可以可劲儿优化</code></pre>
+<p>   <font color=#FF0000 > 不能用可变对象做锁 </font></p>
+<h2 id="1-程序的顺序性规则："><a href="#1-程序的顺序性规则：" class="headerlink" title="1 程序的顺序性规则："></a>1 程序的顺序性规则：</h2><pre><code>    这条规则是指在一个线程中，按照程序顺序，前面的操作 Happens-Before 于后续的任意操作   </code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 以下代码来源于【参考1】</span><br><span class="line">class VolatileExample &#123;</span><br><span class="line">  int x &#x3D; 0;</span><br><span class="line">  volatile boolean v &#x3D; false;</span><br><span class="line">  public void writer() &#123;</span><br><span class="line">    x &#x3D; 42;</span><br><span class="line">    v &#x3D; true;</span><br><span class="line">  &#125;</span><br><span class="line">  public void reader() &#123;</span><br><span class="line">    if (v &#x3D;&#x3D; true) &#123;</span><br><span class="line">      &#x2F;&#x2F; 这里x会是多少呢？</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-volatile-变量规则"><a href="#2-volatile-变量规则" class="headerlink" title="2 volatile 变量规则"></a>2 volatile 变量规则</h2><pre><code>这条规则是指对一个 volatile 变量的写操作， Happens-Before 于后续对这个 volatile 变量的读操作。</code></pre>
+<h2 id="3-传递性"><a href="#3-传递性" class="headerlink" title="3 传递性"></a>3 传递性</h2><pre><code>这条规则是指如果 A Happens-Before B，且 B Happens-Before C，那么 A Happens-Before C。</code></pre>
+<h2 id="4-管程中的锁规则【synchronzied】"><a href="#4-管程中的锁规则【synchronzied】" class="headerlink" title="4 管程中的锁规则【synchronzied】"></a>4 管程中的锁规则【synchronzied】</h2><pre><code>这条规则是指对一个锁的解锁 Happens-Before 于后续对这个锁的加锁。</code></pre>
+<h2 id="5-线程start规则"><a href="#5-线程start规则" class="headerlink" title="5 线程start规则"></a>5 线程start规则</h2><pre><code>它是指主线程 A 启动子线程 B 后，子线程 B 能够看到主线程在启动子线程 B 前的操作。</code></pre>
+<h2 id="6-线程join规则"><a href="#6-线程join规则" class="headerlink" title="6 线程join规则"></a>6 线程join规则</h2><pre><code>它是指主线程 A 等待子线程 B 完成（主线程 A 通过调用子线程 B 的 join() 方法实现），当子线程 B 完成后（主线程 A 中 join() 方法返回），主线程能够看到子线程的操作。当然所谓的“看到”，指的是对共享变量的操作。</code></pre>
+<h2 id="死锁条件"><a href="#死锁条件" class="headerlink" title="死锁条件"></a>死锁条件</h2><ul>
+<li>互斥，共享资源 X 和 Y 只能被一个线程占用；</li>
+<li>占有且等待，线程 T1 已经取得共享资源 X，在等待共享资源 Y 的时候，不释放共享资源 X；</li>
+<li>不可抢占，其他线程不能强行抢占线程 T1 占有的资源；</li>
+<li>循环等待，线程 T1 等待线程 T2 占有的资源，线程 T2 等待线程 T1 占有的资源，就是循环等待。</li>
+</ul>
+<h2 id="用“等待-通知”机制优化循环等待"><a href="#用“等待-通知”机制优化循环等待" class="headerlink" title="用“等待-通知”机制优化循环等待"></a>用“等待-通知”机制优化循环等待</h2><pre><code>Java 语言内置的 synchronized 配合 wait()、notify()、notifyAll() 这三个方法就能轻松实现。</code></pre>
+<h1 id="注意的问题"><a href="#注意的问题" class="headerlink" title="注意的问题"></a>注意的问题</h1><h2 id="安全性问题"><a href="#安全性问题" class="headerlink" title="安全性问题"></a>安全性问题</h2><h2 id="活跃性问题"><a href="#活跃性问题" class="headerlink" title="活跃性问题"></a>活跃性问题</h2><h2 id="性能问题"><a href="#性能问题" class="headerlink" title="性能问题"></a>性能问题</h2><h1 id="管程，对应的英文是-Monitor"><a href="#管程，对应的英文是-Monitor" class="headerlink" title="管程，对应的英文是 Monitor"></a>管程，对应的英文是 Monitor</h1><p><font color=#FF0000 > 管程，指的是管理共享变量以及对共享变量的操作过程，让他们支持并发。翻译为 Java 领域的语言，就是管理类的成员变量和成员方法，让这个类是线程安全的 </font></p>
+<p>管程解决互斥问题的思路很简单，就是将共享变量及其对共享变量的操作统一封装起来。</p>
+<h1 id="线程数量"><a href="#线程数量" class="headerlink" title="线程数量"></a>线程数量</h1><p>对于 CPU 密集型计算，多线程本质上是提升多核 CPU 的利用率，所以对于一个 4 核的 CPU，每个核一个线程，理论上创建 4 个线程就可以了，再多创建线程也只是增加线程切换的成本。所以，对于 CPU 密集型的计算场景，理论上“线程的数量 =CPU 核数”就是最合适的。不过在工程上，线程的数量一般会设置为“CPU 核数 +1”，这样的话，当线程因为偶尔的内存页失效或其他原因导致阻塞时，这个额外的线程可以顶上，从而保证 CPU 的利用率。   </p>
+<p>对于 I/O 密集型的计算场景，比如前面我们的例子中，如果 CPU 计算和 I/O 操作的耗时是 1:1，那么 2 个线程是最合适的。如果 CPU 计算和 I/O 操作的耗时是 1:2，那多少个线程合适呢？是 3 个线程；最佳线程数 =CPU 核数 * [ 1 +（I/O 耗时 / CPU 耗时）]<br><font color=#FF0000 > 伪标准（经验值）：2 * CPU 的核数 + 1 </font></p>
+<h1 id="Lock，Condition"><a href="#Lock，Condition" class="headerlink" title="Lock，Condition"></a>Lock，Condition</h1><p>Java SDK 并发包通过 Lock 和 Condition 两个接口来实现管程，其中 Lock 用于解决互斥问题，Condition 用于解决同步问题。</p>
+<ul>
+<li>永远只在更新对象的成员变量时加锁</li>
+<li>永远只在访问可变的成员变量时加锁</li>
+<li>永远不在调用其他对象的方法时加锁</li>
+</ul>
+<h1 id="Semaphore"><a href="#Semaphore" class="headerlink" title="Semaphore"></a>Semaphore</h1><h1 id="读写锁"><a href="#读写锁" class="headerlink" title="读写锁"></a>读写锁</h1><ul>
+<li>允许多个线程同时读共享变量</li>
+<li>只允许一个线程写共享变量</li>
+<li>如果一线程在写共享变量，此时禁止读进程读共享变量<h1 id="StampedLock"><a href="#StampedLock" class="headerlink" title="StampedLock"></a>StampedLock</h1></li>
+</ul>
+<h1 id="Thread-Runnable"><a href="#Thread-Runnable" class="headerlink" title="Thread,Runnable"></a>Thread,Runnable</h1><pre><code>继承Thread类，并重写run方法
+
+实现Runnable接口</code></pre>
+<h1 id="线程间的通信"><a href="#线程间的通信" class="headerlink" title="线程间的通信"></a>线程间的通信</h1><p>锁与同步</p>
+<h1 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h1><pre><code>volatile关键字能够保证内存的可⻅性，如果⽤volatile关键字声明了⼀个变 量，在⼀个线程⾥⾯改变了这个变量的值，那其它线程是⽴⻢可⻅更改后的 值的。
+
+
+sleep⽅法是不会释放当前的锁的，⽽wait⽅法会</code></pre>
+
+  </div>
+  <div class="post-footer">the end</div>
+</article>
+
+          
+  <nav class="pagination post-nav">
+    
+    
+      <a href="/2020/11/20/spring/">
+        <span class="next-post">Spring<i class="iconfont icon-more"></i></span>
+      </a>
+    
+  </nav>
+
+
+          
+  
+
+
+      </main>
+    </div>
+    <footer>
+      <div class="social-links">
+        
+          
+            <a target="_blank" rel="noopener" href="https://www.zhihu.com/"><i class="iconfont icon-zhihu"></i></a>
+          
+        
+          
+            <a target="_blank" rel="noopener" href="https://weibo.com"><i class="iconfont icon-weibo"></i></a>
+          
+        
+          
+            <a target="_blank" rel="noopener" href="https://github.com/"><i class="iconfont icon-github"></i></a>
+          
+        
+      </div>
+      
+        <div class="quote">
+          <p>Love all, trust a few, do wrong to none.——William Shakespeare</p>
+        </div>
+      
+      <div class="copyright">
+        <p>
+          由 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 强力驱动
+          <span>|</span>
+          主题 - <a target="_blank" rel="noopener" href="https://github.com/wa-ri/hexo-theme-ztopic">ztopic</a
+        </p>
+        <p>
+          <span>
+          
+          &copy;
+          
+            2020
+          
+          </span>
+          <i class="iconfont icon-circle"></i>
+          <span>LengPeng</span>
+        </p>
+      </div>
+</footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <div id="mobile-nav">
+  <nav id="mobile-nav-menu">
+    
+      <a href="/" class="mobile-nav-link"><i class="iconfont icon-home"></i>首页</a>
+    
+      <a href="/archives" class="mobile-nav-link"><i class="iconfont icon-archive"></i>归档</a>
+    
+      <a href="/categories" class="mobile-nav-link"><i class="iconfont icon-category"></i>分类</a>
+    
+      <a href="/about" class="mobile-nav-link"><i class="iconfont icon-about"></i>关于</a>
+    
+    <div class="mobile-intro"><i class="iconfont icon-pen"></i>practice makes perfect</div>
+  </nav>
+</div>
+
+
+  
+<script src="/libs/jQuery/jquery-3.2.1.min.js"></script>
+
+  
+<script src="/libs/slideout/slideout.min.js"></script>
+
+  
+    
+<link rel="stylesheet" href="/libs/fancybox/jquery.fancybox.css">
+
+    
+<script src="/libs/fancybox/jquery.fancybox.pack.js"></script>
+
+  
+  
+
+  
+<script src="/js/ztopic.js"></script>
+
+</body>
+</html>
