@@ -119,7 +119,8 @@ Arraylist 底层数据结构是数组；LinkedList是双向链表；</code></pre
 <li>get查询数据<br>查询数据相对来说就比较简单了，首先计算出hash值，然后去数组查询，是红黑树就去红黑树查，链表就遍历链表查询就可以了。</li>
 <li>resize扩容过程<br>扩容的过程就是对key重新计算hash，然后把数据拷贝到新的数组。</li>
 </ul>
-<h2 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h2><p>采⽤CAS和synchronized来保证并发安全;数据结构跟HashMap1.8的结构类似，数组+链表/红⿊⼆叉树;synchronized只锁定当前链表或红⿊⼆叉树的⾸节点，这样只要hash不冲突，就不会产⽣并发，效率⼜<br>提升N倍。</p>
+<p>hash冲突.链地址法<br>　　 这种方法的基本思想是将所有哈希地址为i的元素构成一个称为同义词链的单链表，并将单链表的头指针存在哈希表的第i个单元中，因而查找、插入和删除主要在同义词链中进行。链地址法适用于经常进行插入和删除的情况。</p>
+<h2 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h2><p>采⽤CAS和synchronized来保证并发安全;<br>数据结构跟HashMap1.8的结构类似，数组+链表/红⿊⼆叉树;synchronized只锁定当前链表或红⿊⼆叉树的⾸节点，这样只要hash不冲突，就不会产⽣并发，效率⼜提升N倍。</p>
 <h2 id="并发与并⾏"><a href="#并发与并⾏" class="headerlink" title="并发与并⾏"></a>并发与并⾏</h2><p>并发：同一时间段，有多个任务在执行；<br>并行：单位时间内，多个任务同时执行；</p>
 <p>并发编程的⽬的就是为了能提⾼程序的执⾏效率，但是并发编程并不总是能提⾼程序运⾏速度的，⽽且并发编程可能会遇到很多问题，⽐如：内存泄漏、上下⽂切换、死锁还有受限于硬件和软件的资源闲置问题。</p>
 <h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><p>互斥；请求并保持；不可剥夺；循环等待；</p>
@@ -135,19 +136,11 @@ Arraylist 底层数据结构是数组；LinkedList是双向链表；</code></pre
 <h2 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h2><p>池化技术的思想主要是为了减少每次获取资源的消耗，提⾼对资源的利⽤率。<br>降低资源消耗。提⾼响应速度。提⾼线程的可管理性。</p>
 <p>Runnable 接⼝不会返回结果或抛出检查异常，但是 Callable 接⼝可以；<br>execute() ⽅法⽤于提交不需要返回值的任务，所以⽆法判断任务是否被线程池执⾏成功与否；</p>
 <p>submit() ⽅法⽤于提交需要返回值的任务。线程池会返回⼀个 Future 类型的对象，通过这个 Future 对象可以判断任务是否执⾏成功，并且可以通过 Future 的 get() ⽅法来获取返回值， get() ⽅法会阻塞当前线程直到任务完成，⽽使⽤ get（long timeout，TimeUnit unit） ⽅法则会阻塞当前线程⼀段时间后⽴即返回，这时候有可能任务没有执⾏<br>完。</p>
-<p>1 先判断线程池中的核心线程们是否空闲，如果空闲，就把这个新的任务指派给某一个空闲线程去执行。</p>
-<p>2 如果没有空闲，并且当前线程池中的核心线程数还小于 corePoolSize，那就再创建一个核心线程。</p>
-<p>3 如果线程池的线程数已经达到核心线程数，并且这些线程都繁忙，就把这个新来的任务放到等待队列中去。</p>
-<p>4 如果等待队列又满了，那么查看一下当前线程数是否到达maximumPoolSize，如果还未到达，就继续创建线程。如果已经到达了，就交给RejectedExecutionHandler来决定怎么处理这个任务。</p>
-<p>AbortPolicy 来拒绝新任务的处理。直接抛出异常，这是默认策略；</p>
-<p>CallerRunsPolicy：用调用者所在的线程来执行任务；</p>
-<p>DiscardPolicy ： 不处理新任务，直接丢弃掉。</p>
-<p>DiscardOldestPolicy ： 此策略将丢弃最早的未处理的任务请求。</p>
+<p>1 先判断线程池中的核心线程们是否空闲，如果空闲，就把这个新的任务指派给某一个空闲线程去执行。<br>2 如果没有空闲，并且当前线程池中的核心线程数还小于 corePoolSize，那就再创建一个核心线程。<br>3 如果线程池的线程数已经达到核心线程数，并且这些线程都繁忙，就把这个新来的任务放到等待队列中去。<br>4 如果等待队列又满了，那么查看一下当前线程数是否到达maximumPoolSize，如果还未到达，就继续创建线程。如果已经到达了，就交给</p>
+<p>RejectedExecutionHandler来决定怎么处理这个任务。<br>AbortPolicy 来拒绝新任务的处理。直接抛出异常，这是默认策略；<br>CallerRunsPolicy：用调用者所在的线程来执行任务；<br>DiscardPolicy ： 不处理新任务，直接丢弃掉。<br>DiscardOldestPolicy ： 此策略将丢弃最早的未处理的任务请求。</p>
 <h2 id="AbstractQueuedSynchronizer"><a href="#AbstractQueuedSynchronizer" class="headerlink" title="AbstractQueuedSynchronizer"></a>AbstractQueuedSynchronizer</h2><p>AQS（Abstract Queued Synchronizer）是一个抽象的队列同步器，通过维护一个共享资源状态（Volatile Int State）和一个先进先出（FIFO）的线程等待队列来实现一个多线程访问共享资源的同步框架。</p>
 <p>AQS为每个共享资源都设置一个共享资源锁，线程在需要访问共享资源时首先需要获取共享资源锁，如果获取到了共享资源锁，便可以在当前线程中使用该共享资源，如果获取不到，则将该线程放入线程等待队列，等待下一次资源调度</p>
-<p>AQS定义了两种资源共享方式：独占式（Exclusive）和共享式（Share）。</p>
-<p>◎ 独占式：只有一个线程能执行，具体的Java实现有ReentrantLock。</p>
-<p>◎ 共享式：多个线程可同时执行，具体的Java实现有Semaphore和CountDownLatch。</p>
+<p>AQS定义了两种资源共享方式：独占式（Exclusive）和共享式（Share）。<br>◎ 独占式：只有一个线程能执行，具体的Java实现有ReentrantLock。<br>◎ 共享式：多个线程可同时执行，具体的Java实现有Semaphore和CountDownLatch。</p>
 <h2 id="CAS"><a href="#CAS" class="headerlink" title="CAS"></a>CAS</h2><p>CAS操作的就是乐观锁，每次不加锁而是假设没有冲突而去完成某项操作，如果因为冲突失败就重试，直到成功为止。</p>
 <p>CAS叫做CompareAndSwap，比较并交换，主要是通过处理器的指令来保证操作的原子性，它包含三个操作数：<br>变量内存地址，V表示<br>旧的预期值，A表示<br>准备设置的新值，B表示<br>当执行CAS指令时，只有当V等于A时，才会用B去更新V的值，否则就不会执行更新操作</p>
 <p>缺点：ABA问题；循环时间长开销大;只能保证一个共享变量的原子操作</p>
@@ -213,7 +206,7 @@ Method 执行方法 invoke()   </code></pre>
 <li>初始化，这个阶段刷新Spring Context，启动应用</li>
 <li>最后结束流程</li>
 </ul>
-<h1 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a>Mysql</h1><p>myisam:支持全文检索、压缩、空间函数……；不支持事务及行级锁；一般用于读多写少的场景；不支持外键，索引与数据分开存储。<br>innodb:基于聚簇索引建立的，支持事物，外键；并通过MVCC来支持高并发、索引和数据存储在一起；</p>
+<h1 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a>Mysql</h1><p>myisam:支持全文检索、压缩、空间函数……；不支持事务及行级锁；一般用于读多写少的场景；不支持外键，索引与数据分开存储。<br>innodb:基于聚簇索引建立的，支持事物，外键；<br>    并通过MVCC来支持高并发、索引和数据存储在一起；</p>
 <h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>按照数据结构：B+树和hash索引；<br>B+ 树时左小右大的顺序存储结构，节点只包含id索引列，而叶子结点包含索引列和数据——聚簇索引；一张表只能有一个主键作为聚簇索引；假设没有定义主键，InnoDB会选择一个唯一的非空索引代替，如果没有的话则会隐式定义一个主键作为聚簇索引。</p>
 <p>索引覆盖和回表：覆盖索引指的是在一次查询中，如果一个索引包含或者说覆盖所有需要查询的字段的值，我们就称之为覆盖索引，而不再需要回表查询。而要确定一个查询是否是覆盖索引，我们只需要explain sql语句看Extra的结果是否是“Using index”即可。</p>
 <h2 id="mysql锁分为共享锁和排他锁，也叫做读锁和写锁"><a href="#mysql锁分为共享锁和排他锁，也叫做读锁和写锁" class="headerlink" title="mysql锁分为共享锁和排他锁，也叫做读锁和写锁"></a>mysql锁分为共享锁和排他锁，也叫做读锁和写锁</h2><p>读锁是共享的，可以通过lock in share mode实现，这时候只能读不能写。<br>写锁是排他的，它会阻塞其他的写锁和读锁。从颗粒度来区分，可以分为表锁和行锁两种。<br>表锁会锁定整张表并且阻塞其他用户对该表的所有读写操作，比如alter修改表结构的时候会锁表。</p>
@@ -224,13 +217,17 @@ Method 执行方法 invoke()   </code></pre>
 <li>隔离性指的是一个事务的修改在最终提交前，对其他事务是不可见的。</li>
 <li>持久性指的是一旦事务提交，所做的修改就会永久保存到数据库中。</li>
 </ul>
-<p>read uncommit 读未提交，可能会读到其他事务未提交的数据，也叫做脏读。<br>read commit 读已提交，两次读取结果不一致，叫做不可重复读。不可重复读解决了脏读的问题，他只会读取已经提交的事务。<br>repeatable read 可重复复读，这是mysql的默认级别，就是每次读取结果都一样，但是有可能产生幻读。<br>serializable 串行，一般是不会使用的，他会给每一行读取的数据加锁，会导致大量超时和锁竞争的问题。</p>
+<p>read uncommit 读未提交，可能会读到其他事务未提交的数据，也叫做脏读。<br>    一个事务读取到另一个事务尚未提交的数据,称之为脏读</p>
+<p>read commit 读已提交，两次读取结果不一致，叫做不可重复读。不可重复读解决了脏读的问题，他只会读取已经提交的事务。<br>    个事务读取到另一个事务已提交的数据,导致对同一条记录读取两次以上的结果不一致,称之为不可重复读</p>
+<p>repeatable read 可重复复读，这是mysql的默认级别，就是每次读取结果都一样，但是有可能产生幻读。<br>    一个事务读取到另一个事务已经提交的delete或者insert数据,导致对同一张表读取两次以上结果不一致,称之为幻读   </p>
+<p>serializable 串行，一般是不会使用的，他会给每一行读取的数据加锁，会导致大量超时和锁竞争的问题。</p>
 <p>A原子性由undo log日志保证，它记录了需要回滚的日志信息，事务回滚时撤销已经执行成功的sql<br>C一致性一般由代码层面来保证<br>I隔离性由MVCC来保证<br>D持久性由内存+redo log来保证，mysql修改数据同时在内存和redo log记录这次操作，事务提交的时候通过redo log刷盘，宕机的时候可以从redo log恢复</p>
 <p>MVCC叫做多版本并发控制，实际上就是保存了数据在某个时间节点的快照。</p>
 <h1 id="MQ"><a href="#MQ" class="headerlink" title="MQ"></a>MQ</h1><h2 id="如何保证消息不丢失"><a href="#如何保证消息不丢失" class="headerlink" title="如何保证消息不丢失"></a>如何保证消息不丢失</h2><p>生产者弄丢了数据<br>    可以选择使用rabbitmq提供是事物功能<br>    可以开启confirm模式</p>
 <p>rabbitmq自己丢了数据<br>    设置消息持久化到磁盘</p>
 <p>消费端弄丢了数据<br>    使用rabbitmq提供的ack机制，首先关闭rabbitmq的自动ack，然后每次在确保处理完这个消息之后，在代码里手动调用ack。这样就可以避免消息还没有处理完就ack。</p>
-<p>1.确保产品业务不偏；<br>2.新的技术体系搭建；<br>3.团队成员优胜劣汰；</p>
+<p>复杂的问题简单化——拆分<br>服务提供者，服务消费者，注册中心</p>
+<p>服务注册——服务启动时将自己的信息存储在这册中心<br>服务发现——消费者从注册中心获取服务提供者的网络信息，通过该信息进行服务调用</p>
 
   </div>
   <div class="post-footer">the end</div>
@@ -285,7 +282,7 @@ Method 执行方法 invoke()   </code></pre>
           
           &copy;
           
-            2020
+            2021
           
           </span>
           <i class="iconfont icon-circle"></i>
