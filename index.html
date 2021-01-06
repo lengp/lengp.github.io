@@ -78,6 +78,51 @@
     <article class="post" id="post-excerpt">
       <header>
         <div class="post-title">
+          <h1><a class="post-title-link" href="/2021/01/06/working/">工作中</a></h1>
+        </div>
+        <div class="post-meta">
+          <span class="post-time"><i class="iconfont icon-calendar"></i>2021-01-06</span>
+          
+              
+                <i class="iconfont icon-divide"></i>
+                <i class="iconfont icon-folder" style="color: #8a8a8a;"></i>
+                <a class="post-category" href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a>
+              
+          
+          <!---------------------------------------->
+            
+        <!----------------------------------------->
+        </div>
+      </header>
+      <div class="post-content">
+        <!-------------->
+        
+          <h1 id="Java-maven-打包后-不能读取resource目下的证书及其他文件："><a href="#Java-maven-打包后-不能读取resource目下的证书及其他文件：" class="headerlink" title="Java maven 打包后 不能读取resource目下的证书及其他文件："></a>Java maven 打包后 不能读取resource目下的证书及其他文件：</h1><p>原读取方式：FileReader.create(File, charset).readString();      </p>
+<p>原因在于这种获取配置文件的方式无法获取压缩包中的配置文件   </p>
+<p>解决方案以文件流方式读取：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Resource resource &#x3D; new ClassPathResource(wxPayV3Config.getKeyPath());</span><br><span class="line">  InputStream is &#x3D; resource.getStream();</span><br><span class="line">  String originalKey &#x3D; &quot;&quot;;</span><br><span class="line">  byte[] buf &#x3D; new byte[1024];</span><br><span class="line">  int len &#x3D; 0;</span><br><span class="line">  while ((len &#x3D; is.read(buf)) !&#x3D; -1) &#123;</span><br><span class="line">    originalKey +&#x3D; new String(buf, 0, len);</span><br><span class="line">  &#125;</span><br><span class="line">  is.close();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h1 id="Spring-boot-整合consul-和feign不成功调用报错"><a href="#Spring-boot-整合consul-和feign不成功调用报错" class="headerlink" title="Spring boot 整合consul 和feign不成功调用报错"></a>Spring boot 整合consul 和feign不成功调用报错</h1><p>spring boot  整合consul 和feign不成功，项目启动正常，也正常注册到consul，可是在请求时，报错找不到类<br>java.lang.ClassNotFoundException: com.netflix.config.CachedDynamicIntProperty</p>
+<p>看样子是类冲突了  </p>
+<p>解决方案：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;groupId&gt;org.springframework.cloud&lt;&#x2F;groupId&gt; </span><br><span class="line">&lt;artifactId&gt;spring-cloud-starter-openfeign&lt;&#x2F;artifactId&gt; </span><br><span class="line">&lt;exclusions&gt; </span><br><span class="line">	&lt;exclusion&gt; </span><br><span class="line">		&lt;groupId&gt;com.netflix.archaius&lt;&#x2F;groupId&gt; </span><br><span class="line">		&lt;artifactId&gt;archaius-core&lt;&#x2F;artifactId&gt; </span><br><span class="line">	&lt;&#x2F;exclusion&gt;</span><br><span class="line"> &lt;&#x2F;exclusions&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+        
+        <!-------------->
+      </div>
+      <div class="post-tags">
+      
+    </div>
+    </article>
+  
+    <article class="post" id="post-excerpt">
+      <header>
+        <div class="post-title">
           <h1><a class="post-title-link" href="/2020/12/08/interview/">XXXX</a></h1>
         </div>
         <div class="post-meta">

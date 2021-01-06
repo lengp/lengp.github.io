@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#34495e">
+  <title>工作中 | LengPeng</title>
+  <link rel="alternate" href="path/of/rss" type="application/atom+xml">
+  <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div class="mobile-header">
+    <span><i class="iconfont icon-turnon" id="mobile-nav-toggle"></i></span>
+    <div class="mobile-logo">
+      <a href="/.">LengPeng</a>
+    </div>
+  </div>
+  <div class="page" id="mobile-nav-panel">
+    <div class="container">
+      <header class="site-nav">
+      <div class="nav-content">
+        <div class="logo">
+          <a href="/">LengPeng</a>
+        </div>
+        <nav class="navbar">
+          <ul>
+            
+              <li class="menu-item">
+                <a href="/" class="menu-item-link"><i class="iconfont icon-home"></i>首页</a>
+              </li>
+            
+              <li class="menu-item">
+                <a href="/archives" class="menu-item-link"><i class="iconfont icon-archive"></i>归档</a>
+              </li>
+            
+              <li class="menu-item">
+                <a href="/categories" class="menu-item-link"><i class="iconfont icon-category"></i>分类</a>
+              </li>
+            
+              <li class="menu-item">
+                <a href="/about" class="menu-item-link"><i class="iconfont icon-about"></i>关于</a>
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+</header>
+
+      <div class="banner">
+  <div class="show">
+    <!-- <img src="/" alt="banner"> -->
+    <div class="banner-title">
+      
+        <div class="post-title">
+          工作中
+            <div class="post-tags">
+    		    
+    	      </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+      <main class="main"id="main">
+          <article class="post">
+  
+
+  <header>
+    <div class="post-title mobile-post-title">
+      <h1>工作中</h1>
+        <div class="post-tags">
+        
+        </div>
+    </div>
+    <div class="post-meta">
+      <span class="post-time"><i class="iconfont icon-calendar"></i>2021-01-06</span>
+      
+          
+            <i class="iconfont icon-divide"></i>
+            <i class="iconfont icon-folder" style="color: #8a8a8a;"></i>
+            <a class="post-category" href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a>
+          
+      
+      <!----------------------------------->
+        
+      <!----------------------------------->
+    </div>
+  </header>
+  
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java-maven-%E6%89%93%E5%8C%85%E5%90%8E-%E4%B8%8D%E8%83%BD%E8%AF%BB%E5%8F%96resource%E7%9B%AE%E4%B8%8B%E7%9A%84%E8%AF%81%E4%B9%A6%E5%8F%8A%E5%85%B6%E4%BB%96%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="toc-text">Java maven 打包后 不能读取resource目下的证书及其他文件：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring-boot-%E6%95%B4%E5%90%88consul-%E5%92%8Cfeign%E4%B8%8D%E6%88%90%E5%8A%9F%E8%B0%83%E7%94%A8%E6%8A%A5%E9%94%99"><span class="toc-text">Spring boot 整合consul 和feign不成功调用报错</span></a></li></ol>
+    </div>
+  </div>
+
+
+  <div class="post-content">
+    <h1 id="Java-maven-打包后-不能读取resource目下的证书及其他文件："><a href="#Java-maven-打包后-不能读取resource目下的证书及其他文件：" class="headerlink" title="Java maven 打包后 不能读取resource目下的证书及其他文件："></a>Java maven 打包后 不能读取resource目下的证书及其他文件：</h1><p>原读取方式：FileReader.create(File, charset).readString();      </p>
+<p>原因在于这种获取配置文件的方式无法获取压缩包中的配置文件   </p>
+<p>解决方案以文件流方式读取：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Resource resource &#x3D; new ClassPathResource(wxPayV3Config.getKeyPath());</span><br><span class="line">  InputStream is &#x3D; resource.getStream();</span><br><span class="line">  String originalKey &#x3D; &quot;&quot;;</span><br><span class="line">  byte[] buf &#x3D; new byte[1024];</span><br><span class="line">  int len &#x3D; 0;</span><br><span class="line">  while ((len &#x3D; is.read(buf)) !&#x3D; -1) &#123;</span><br><span class="line">    originalKey +&#x3D; new String(buf, 0, len);</span><br><span class="line">  &#125;</span><br><span class="line">  is.close();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h1 id="Spring-boot-整合consul-和feign不成功调用报错"><a href="#Spring-boot-整合consul-和feign不成功调用报错" class="headerlink" title="Spring boot 整合consul 和feign不成功调用报错"></a>Spring boot 整合consul 和feign不成功调用报错</h1><p>spring boot  整合consul 和feign不成功，项目启动正常，也正常注册到consul，可是在请求时，报错找不到类<br>java.lang.ClassNotFoundException: com.netflix.config.CachedDynamicIntProperty</p>
+<p>看样子是类冲突了  </p>
+<p>解决方案：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;groupId&gt;org.springframework.cloud&lt;&#x2F;groupId&gt; </span><br><span class="line">&lt;artifactId&gt;spring-cloud-starter-openfeign&lt;&#x2F;artifactId&gt; </span><br><span class="line">&lt;exclusions&gt; </span><br><span class="line">	&lt;exclusion&gt; </span><br><span class="line">		&lt;groupId&gt;com.netflix.archaius&lt;&#x2F;groupId&gt; </span><br><span class="line">		&lt;artifactId&gt;archaius-core&lt;&#x2F;artifactId&gt; </span><br><span class="line">	&lt;&#x2F;exclusion&gt;</span><br><span class="line"> &lt;&#x2F;exclusions&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+  </div>
+  <div class="post-footer">the end</div>
+</article>
+
+          
+  <nav class="pagination post-nav">
+    
+    
+      <a href="/2020/12/08/interview/">
+        <span class="next-post">XXXX<i class="iconfont icon-more"></i></span>
+      </a>
+    
+  </nav>
+
+
+          
+  
+
+
+      </main>
+    </div>
+    <footer>
+      <div class="social-links">
+        
+          
+            <a target="_blank" rel="noopener" href="https://www.zhihu.com/"><i class="iconfont icon-zhihu"></i></a>
+          
+        
+          
+            <a target="_blank" rel="noopener" href="https://weibo.com"><i class="iconfont icon-weibo"></i></a>
+          
+        
+          
+            <a target="_blank" rel="noopener" href="https://github.com/"><i class="iconfont icon-github"></i></a>
+          
+        
+      </div>
+      
+        <div class="quote">
+          <p>Love all, trust a few, do wrong to none.——William Shakespeare</p>
+        </div>
+      
+      <div class="copyright">
+        <p>
+          由 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 强力驱动
+          <span>|</span>
+          主题 - <a target="_blank" rel="noopener" href="https://github.com/wa-ri/hexo-theme-ztopic">ztopic</a
+        </p>
+        <p>
+          <span>
+          
+          &copy;
+          
+            2021
+          
+          </span>
+          <i class="iconfont icon-circle"></i>
+          <span>LengPeng</span>
+        </p>
+      </div>
+</footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <div id="mobile-nav">
+  <nav id="mobile-nav-menu">
+    
+      <a href="/" class="mobile-nav-link"><i class="iconfont icon-home"></i>首页</a>
+    
+      <a href="/archives" class="mobile-nav-link"><i class="iconfont icon-archive"></i>归档</a>
+    
+      <a href="/categories" class="mobile-nav-link"><i class="iconfont icon-category"></i>分类</a>
+    
+      <a href="/about" class="mobile-nav-link"><i class="iconfont icon-about"></i>关于</a>
+    
+    <div class="mobile-intro"><i class="iconfont icon-pen"></i>practice makes perfect</div>
+  </nav>
+</div>
+
+
+  
+<script src="/libs/jQuery/jquery-3.2.1.min.js"></script>
+
+  
+<script src="/libs/slideout/slideout.min.js"></script>
+
+  
+    
+<link rel="stylesheet" href="/libs/fancybox/jquery.fancybox.css">
+
+    
+<script src="/libs/fancybox/jquery.fancybox.pack.js"></script>
+
+  
+  
+
+  
+<script src="/js/ztopic.js"></script>
+
+</body>
+</html>
