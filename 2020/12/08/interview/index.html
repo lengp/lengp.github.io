@@ -1,116 +1,233 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="theme-color" content="#34495e">
-  <title>XXXX | LengPeng</title>
-  <link rel="alternate" href="path/of/rss" type="application/atom+xml">
-  <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-<link rel="stylesheet" href="/css/style.css">
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="LengPeng">
+  <meta name="keywords" content="">
+  <title>XXXX - LengPeng</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
 
   
-
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
   
 
   
-
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
   
 
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"lengp.github.io","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
 <meta name="generator" content="Hexo 5.2.0"></head>
 
-<body>
-  <div class="mobile-header">
-    <span><i class="iconfont icon-turnon" id="mobile-nav-toggle"></i></span>
-    <div class="mobile-logo">
-      <a href="/.">LengPeng</a>
-    </div>
-  </div>
-  <div class="page" id="mobile-nav-panel">
-    <div class="container">
-      <header class="site-nav">
-      <div class="nav-content">
-        <div class="logo">
-          <a href="/">LengPeng</a>
-        </div>
-        <nav class="navbar">
-          <ul>
-            
-              <li class="menu-item">
-                <a href="/" class="menu-item-link"><i class="iconfont icon-home"></i>首页</a>
-              </li>
-            
-              <li class="menu-item">
-                <a href="/archives" class="menu-item-link"><i class="iconfont icon-archive"></i>归档</a>
-              </li>
-            
-              <li class="menu-item">
-                <a href="/categories" class="menu-item-link"><i class="iconfont icon-category"></i>分类</a>
-              </li>
-            
-              <li class="menu-item">
-                <a href="/about" class="menu-item-link"><i class="iconfont icon-about"></i>关于</a>
-              </li>
-            
-          </ul>
-        </nav>
-      </div>
-</header>
 
-      <div class="banner">
-  <div class="show">
-    <!-- <img src="/" alt="banner"> -->
-    <div class="banner-title">
-      
-        <div class="post-title">
-          XXXX
-            <div class="post-tags">
-    		    
-    	      </div>
-        </div>
-      
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
     </div>
   </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="XXXX">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-12-08 10:44" pubdate>
+        2020年12月8日 上午
+      </time>
+    </span>
+  
 </div>
 
-      <main class="main"id="main">
-          <article class="post">
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      5.6k 字
+    </span>
   
 
-  <header>
-    <div class="post-title mobile-post-title">
-      <h1>XXXX</h1>
-        <div class="post-tags">
-        
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      59
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
         </div>
-    </div>
-    <div class="post-meta">
-      <span class="post-time"><i class="iconfont icon-calendar"></i>2020-12-08</span>
-      
-          
-            <i class="iconfont icon-divide"></i>
-            <i class="iconfont icon-folder" style="color: #8a8a8a;"></i>
-            <a class="post-category" href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a>
-          
-      
-      <!----------------------------------->
-        
-      <!----------------------------------->
+      </div>
     </div>
   </header>
-  
-  <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">目录</h2>
-    <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java"><span class="toc-text">Java</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Arraylist-%E4%B8%8E-LinkedList%E3%80%81Vector-%E5%8C%BA%E5%88%AB"><span class="toc-text">Arraylist 与 LinkedList、Vector 区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap%E5%8E%9F%E7%90%86"><span class="toc-text">HashMap原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ConcurrentHashMap"><span class="toc-text">ConcurrentHashMap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B6%E5%8F%91%E4%B8%8E%E5%B9%B6%E2%BE%8F"><span class="toc-text">并发与并⾏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%BB%E9%94%81"><span class="toc-text">死锁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BB%AC%E8%B0%83%E2%BD%A4-start-%E2%BD%85%E6%B3%95%E6%97%B6%E4%BC%9A%E6%89%A7%E2%BE%8F-run-%E2%BD%85%E6%B3%95"><span class="toc-text">为什么我们调⽤ start() ⽅法时会执⾏ run() ⽅法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">进程和线程的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#synchronized%E5%8E%9F%E7%90%86"><span class="toc-text">synchronized原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ReentrantLock"><span class="toc-text">ReentrantLock</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#volatile"><span class="toc-text">volatile</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ThreadLocal"><span class="toc-text">ThreadLocal</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E6%B1%A0"><span class="toc-text">线程池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AbstractQueuedSynchronizer"><span class="toc-text">AbstractQueuedSynchronizer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CAS"><span class="toc-text">CAS</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JVM"><span class="toc-text">JVM</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="toc-text">对象创建的过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E6%97%A0%E7%94%A8%E7%9A%84%E5%B8%B8%E9%87%8F"><span class="toc-text">判断无用的常量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E6%97%A0%E7%94%A8%E7%9A%84%E7%B1%BB"><span class="toc-text">判断无用的类</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C"><span class="toc-text">网络</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP-%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="toc-text">TCP 三次握手</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%81%E7%9A%84%E4%BC%98%E5%8C%96%E6%9C%BA%E5%88%B6"><span class="toc-text">锁的优化机制</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring"><span class="toc-text">Spring</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#spring-%E7%94%A8%E5%88%B0%E7%9A%84%E6%A8%A1%E5%BC%8F%EF%BC%9A"><span class="toc-text">spring 用到的模式：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IOC-AOP"><span class="toc-text">IOC AOP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring-%E4%B8%AD%E7%9A%84-bean-%E7%9A%84%E4%BD%9C%E2%BD%A4%E5%9F%9F%E6%9C%89"><span class="toc-text">Spring 中的 bean 的作⽤域有</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Component-%E5%92%8C-Bean-%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">@Component 和 @Bean 的区别是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%86%E2%BC%80%E4%B8%AA%E7%B1%BB%E5%A3%B0%E6%98%8E%E4%B8%BASpring%E7%9A%84-bean-%E7%9A%84%E6%B3%A8%E8%A7%A3%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-text">将⼀个类声明为Spring的 bean 的注解有哪些</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SpringBean%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">SpringBean生命周期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring%E6%98%AF%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96%E7%9A%84"><span class="toc-text">Spring是怎么解决循环依赖的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring%E4%BA%8B%E5%8A%A1%E7%9A%84%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB"><span class="toc-text">Spring事务的隔离级别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E6%9C%BA%E5%88%B6"><span class="toc-text">Spring事务传播机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84"><span class="toc-text">反射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E8%AF%B4Spring-Boot-%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B"><span class="toc-text">说说Spring Boot 启动流程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mysql"><span class="toc-text">Mysql</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95"><span class="toc-text">索引</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql%E9%94%81%E5%88%86%E4%B8%BA%E5%85%B1%E4%BA%AB%E9%94%81%E5%92%8C%E6%8E%92%E4%BB%96%E9%94%81%EF%BC%8C%E4%B9%9F%E5%8F%AB%E5%81%9A%E8%AF%BB%E9%94%81%E5%92%8C%E5%86%99%E9%94%81"><span class="toc-text">mysql锁分为共享锁和排他锁，也叫做读锁和写锁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1"><span class="toc-text">事务</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MQ"><span class="toc-text">MQ</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E4%B8%A2%E5%A4%B1"><span class="toc-text">如何保证消息不丢失</span></a></li></ol></li></ol>
-    </div>
-  </div>
 
+  <main>
+    
+      
 
-  <div class="post-content">
-    <h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1><p>强<br>软<br>弱——<br>虚：与队列结合使用——实际无使用场景；管理直接内存；</p>
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">XXXX</h1>
+            
+            <div class="markdown-body">
+              <h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1><p>强<br>软<br>弱——<br>虚：与队列结合使用——实际无使用场景；管理直接内存；</p>
 <h2 id="Arraylist-与-LinkedList、Vector-区别"><a href="#Arraylist-与-LinkedList、Vector-区别" class="headerlink" title="Arraylist 与 LinkedList、Vector 区别"></a>Arraylist 与 LinkedList、Vector 区别</h2><pre><code>Arraylist 与 LinkedList 两个都是不保证线程安全；Vector是线程安全的；
 Arraylist 底层数据结构是数组；LinkedList是双向链表；</code></pre>
 <h2 id="HashMap原理"><a href="#HashMap原理" class="headerlink" title="HashMap原理"></a>HashMap原理</h2><p>HashMap主要由数组和链表组成，他不是线程安全的。核心的点就是put插入数据的过程，get查询数据以及扩容的方式。JDK1.7和1.8的主要区别在于头插和尾插方式的修改，头插容易导致HashMap链表死循环，并且1.8之后加入红黑树对性能有提升。</p>
@@ -229,110 +346,210 @@ Method 执行方法 invoke()   </code></pre>
 <p>复杂的问题简单化——拆分<br>服务提供者，服务消费者，注册中心</p>
 <p>服务注册——服务启动时将自己的信息存储在这册中心<br>服务发现——消费者从注册中心获取服务提供者的网络信息，通过该信息进行服务调用</p>
 
-  </div>
-  <div class="post-footer">the end</div>
-</article>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/01/06/working/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">工作中</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/11/26/multithreading/">
+                        <span class="hidden-mobile">多线程</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
 
-          
-  <nav class="pagination post-nav">
-    
-      <a href="/2021/01/06/working/">
-        <span class="prev-post"><i class="iconfont icon-back"></i>工作中</span>
-      </a>
-    
-    
-      <a href="/2020/11/26/multithreading/">
-        <span class="next-post">多线程<i class="iconfont icon-more"></i></span>
-      </a>
-    
-  </nav>
-
-
-          
-  
-
-
-      </main>
-    </div>
-    <footer>
-      <div class="social-links">
-        
-          
-            <a target="_blank" rel="noopener" href="https://www.zhihu.com/"><i class="iconfont icon-zhihu"></i></a>
-          
-        
-          
-            <a target="_blank" rel="noopener" href="https://weibo.com"><i class="iconfont icon-weibo"></i></a>
-          
-        
-          
-            <a target="_blank" rel="noopener" href="https://github.com/"><i class="iconfont icon-github"></i></a>
-          
-        
-      </div>
-      
-        <div class="quote">
-          <p>Love all, trust a few, do wrong to none.——William Shakespeare</p>
+            
+          </article>
         </div>
-      
-      <div class="copyright">
-        <p>
-          由 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 强力驱动
-          <span>|</span>
-          主题 - <a target="_blank" rel="noopener" href="https://github.com/wa-ri/hexo-theme-ztopic">ztopic</a
-        </p>
-        <p>
-          <span>
-          
-          &copy;
-          
-            2021
-          
-          </span>
-          <i class="iconfont icon-circle"></i>
-          <span>LengPeng</span>
-        </p>
       </div>
-</footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
     </div>
-  </div>
-  <div id="mobile-nav">
-  <nav id="mobile-nav-menu">
     
-      <a href="/" class="mobile-nav-link"><i class="iconfont icon-home"></i>首页</a>
-    
-      <a href="/archives" class="mobile-nav-link"><i class="iconfont icon-archive"></i>归档</a>
-    
-      <a href="/categories" class="mobile-nav-link"><i class="iconfont icon-category"></i>分类</a>
-    
-      <a href="/about" class="mobile-nav-link"><i class="iconfont icon-about"></i>关于</a>
-    
-    <div class="mobile-intro"><i class="iconfont icon-pen"></i>practice makes perfect</div>
-  </nav>
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
 </div>
 
-
-  
-<script src="/libs/jQuery/jquery-3.2.1.min.js"></script>
-
-  
-<script src="/libs/slideout/slideout.min.js"></script>
-
-  
+      </div>
     
-<link rel="stylesheet" href="/libs/fancybox/jquery.fancybox.css">
+  </div>
+</div>
+
+<!-- Custom -->
+
 
     
-<script src="/libs/fancybox/jquery.fancybox.pack.js"></script>
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
 
   
-  
 
   
-<script src="/js/ztopic.js"></script>
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
 
 </body>
 </html>
